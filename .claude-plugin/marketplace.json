@@ -1,0 +1,11 @@
+{
+  "name": "finding-unknowns-skills",
+  "owner": { "name": "Neeeophytee" },
+  "plugins": [
+    {
+      "name": "finding-unknowns",
+      "source": "./",
+      "description": "Skills that surface your unknown unknowns before they get expensive: blindspot pass, brainstorms, interviews, references, plans, notes, pitches, and a merge quiz."
+    }
+  ]
+}
