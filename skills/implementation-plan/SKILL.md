@@ -14,6 +14,7 @@ A plan's job is not to prove you thought of everything. It's to put the reversib
 3. **Section 2 — Known unknowns and how the plan absorbs them.** Where ambiguity remains, state the default that will be taken and the signal that would trigger a pivot. A plan that admits its unknowns survives contact with the territory; one that doesn't just breaks quietly.
 4. **Section 3 — The mechanical work.** Refactors, wiring, migrations, tests. Compress this; the user trusts you here and reviewing it is a waste of their attention.
 5. End with the review request: the 2-4 specific items you want a yes/no or a pick on before starting.
+6. If the plan is more than a screenful or the user prefers visual artifacts, offer it as a single self-contained HTML page — sections collapsible, tweakable decisions pinned to the top.
 
 ## Guardrails
 
