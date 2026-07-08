@@ -51,7 +51,7 @@ cp -r finding-unknowns-skills/skills/* ~/.agents/skills/        # all projects
 # or, per project:  cp -r finding-unknowns-skills/skills/* your-repo/.agents/skills/
 ```
 
-Codex detects skill changes automatically. For the passive-guidance version, drop [`AGENTS.md`](AGENTS.md) into your project root — Codex reads it before doing any work. (Paths per the [Codex skills docs](https://developers.openai.com/codex/skills).)
+Codex detects skill changes automatically. For the passive-guidance version, drop [`AGENTS.md`](AGENTS.md) into your project root — Codex reads it before doing any work. Tested with Codex CLI v0.143: all 8 skills and their trigger descriptions load into the model-visible prompt (verifiable yourself with `codex debug prompt-input`). (Paths per the [Codex skills docs](https://developers.openai.com/codex/skills).)
 
 ## When to reach for which
 
