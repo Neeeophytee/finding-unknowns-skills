@@ -2,7 +2,7 @@
 
 **8 installable skills that make Claude help you find what you don't know — before it gets expensive to fix.**
 
-The map is not the territory. Your prompt is a map; the codebase and the real world are the territory. The gap between them is your *unknowns*, and with strong models the quality of the work is bottlenecked by how well you clarify them. These skills turn that idea, from [Thariq Shihipar's](https://thariqs.github.io/html-effectiveness/unknowns/) essay *A Field Guide to Fable: Finding Your Unknowns*, into commands you can run in Claude Code (or any agent that reads the [agentskills.io](https://agentskills.io) SKILL.md format).
+The map is not the territory. Your prompt is a map; the codebase and the real world are the territory. The gap between them is your *unknowns*, and with strong models the quality of the work is bottlenecked by how well you clarify them. These skills turn that idea, from [Thariq Shihipar's](https://thariqs.github.io/html-effectiveness/unknowns/) essay *A Field Guide to Fable: Finding Your Unknowns*, into commands you can run in Claude Code, OpenAI Codex, or any agent that reads the [agentskills.io](https://agentskills.io) SKILL.md format.
 
 > Community project. Distilled, with attribution, from a public essay by Thariq Shihipar (Anthropic, Claude Code team). **Not an official Anthropic repository.**
 
@@ -39,7 +39,19 @@ Every skill below is a cheap way to move something out of the bottom row before 
 
 **Manually (pick the skills you want):** copy any `skills/<name>/` folder into your project's `.claude/skills/` directory (or `~/.claude/skills/` for all projects).
 
-**The one-file version:** if you'd rather have the whole approach as passive guidance instead of commands, drop [`CLAUDE.md`](CLAUDE.md) into your project root (or append it to your existing one).
+**The one-file version:** if you'd rather have the whole approach as passive guidance instead of commands, drop [`CLAUDE.md`](CLAUDE.md) (Claude Code) or [`AGENTS.md`](AGENTS.md) (Codex and other AGENTS.md-reading agents) into your project root, or append it to your existing one.
+
+### Use in OpenAI Codex
+
+The skills use the same `SKILL.md` format Codex reads natively, so no conversion is needed. Copy them into one of Codex's skill locations:
+
+```
+git clone https://github.com/Neeeophytee/finding-unknowns-skills
+cp -r finding-unknowns-skills/skills/* ~/.agents/skills/        # all projects
+# or, per project:  cp -r finding-unknowns-skills/skills/* your-repo/.agents/skills/
+```
+
+Codex detects skill changes automatically. For the passive-guidance version, drop [`AGENTS.md`](AGENTS.md) into your project root — Codex reads it before doing any work. (Paths per the [Codex skills docs](https://developers.openai.com/codex/skills).)
 
 ## When to reach for which
 
