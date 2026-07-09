@@ -30,6 +30,14 @@ Every skill below is a cheap way to move something out of the bottom row before 
 
 ## Install
 
+**One command, any agent (recommended):** Vercel's `skills` CLI auto-detects your coding agent (Claude Code, Cursor, Codex, Copilot, Gemini, and more) and installs the skills into the right place for each:
+
+```
+npx skills add Neeeophytee/finding-unknowns-skills
+```
+
+Add `--list` to preview the 8 skills first, or `--skill blindspot-pass` to install just one. (Discoverable on [skills.sh](https://skills.sh).)
+
 **As a Claude Code plugin (all 8 skills):**
 
 ```
@@ -41,9 +49,13 @@ Every skill below is a cheap way to move something out of the bottom row before 
 
 **The one-file version:** if you'd rather have the whole approach as passive guidance instead of commands, drop [`CLAUDE.md`](CLAUDE.md) (Claude Code) or [`AGENTS.md`](AGENTS.md) (Codex and other AGENTS.md-reading agents) into your project root, or append it to your existing one.
 
+### Use in Cursor
+
+The `npx skills add Neeeophytee/finding-unknowns-skills` command above detects Cursor and installs the skills into `~/.cursor/skills/` for you — no manual step. (Verified: Vercel's CLI discovers all 8 skills in this repo.)
+
 ### Use in OpenAI Codex
 
-The skills use the same `SKILL.md` format Codex reads natively, so no conversion is needed. Copy them into one of Codex's skill locations:
+The skills use the same `SKILL.md` format Codex reads natively, so no conversion is needed. Either run `npx skills add Neeeophytee/finding-unknowns-skills` (it detects Codex), or copy them into a Codex skill location:
 
 ```
 git clone https://github.com/Neeeophytee/finding-unknowns-skills
