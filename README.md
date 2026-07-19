@@ -2,7 +2,7 @@
 
 **8 installable skills that make Claude help you find what you don't know — before it gets expensive to fix.**
 
-The map is not the territory. Your prompt is a map; the codebase and the real world are the territory. The gap between them is your *unknowns*, and with strong models the quality of the work is bottlenecked by how well you clarify them. These skills turn that idea, from [Thariq Shihipar's](https://thariqs.github.io/html-effectiveness/unknowns/) essay *A Field Guide to Fable: Finding Your Unknowns*, into commands you can run in Claude Code, OpenAI Codex, or any agent that reads the [agentskills.io](https://agentskills.io) SKILL.md format.
+The map is not the territory. Your prompt is a map; the codebase and the real world are the territory. The gap between them is your *unknowns*, and with strong models the quality of the work is bottlenecked by how well you clarify them. These skills turn that idea, from [Thariq Shihipar's](https://thariqs.github.io/html-effectiveness/unknowns/) essay *A Field Guide to Fable: Finding Your Unknowns*, into commands you can run in Claude Code, OpenAI Codex, Kimi Code CLI (Kimi K3), or any agent that reads the [agentskills.io](https://agentskills.io) SKILL.md format.
 
 > Community project. Distilled, with attribution, from a public essay by Thariq Shihipar (Anthropic, Claude Code team). **Not an official Anthropic repository.**
 
@@ -64,6 +64,18 @@ cp -r finding-unknowns-skills/skills/* ~/.agents/skills/        # all projects
 ```
 
 Codex detects skill changes automatically. For the passive-guidance version, drop [`AGENTS.md`](AGENTS.md) into your project root — Codex reads it before doing any work. Tested with Codex CLI v0.143: all 8 skills and their trigger descriptions load into the model-visible prompt (verifiable yourself with `codex debug prompt-input`). (Paths per the [Codex skills docs](https://developers.openai.com/codex/skills).)
+
+### Use in Kimi Code CLI (Kimi K3)
+
+Kimi Code CLI auto-discovers SKILL.md skills at startup and injects their names and trigger descriptions into the system prompt — the same mechanism as Claude Code and Codex. Its search paths include `~/.claude/skills/`, `~/.codex/skills/`, and `~/.agents/skills/`, so **if you already installed these skills for Claude Code, Codex, or via `npx skills add`, Kimi K3 sees them with zero extra steps.** Fresh install into Kimi's own location:
+
+```
+git clone https://github.com/Neeeophytee/finding-unknowns-skills
+cp -r finding-unknowns-skills/skills/* ~/.kimi/skills/           # all projects
+# or, per project:  cp -r finding-unknowns-skills/skills/* your-repo/.kimi/skills/
+```
+
+Project-level paths (`.kimi/skills/`, `.claude/skills/`, `.codex/skills/`, `.agents/skills/`) resolve from the nearest `.git` root; add custom locations with `--skills-dir` or `extra_skill_dirs`. (Paths per the [Kimi Code CLI skills docs](https://moonshotai.github.io/kimi-cli/en/customization/skills.html).)
 
 ## When to reach for which
 

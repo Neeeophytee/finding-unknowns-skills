@@ -1,6 +1,8 @@
 {
   "name": "finding-unknowns-skills",
-  "owner": { "name": "Neeeophytee" },
+  "owner": {
+    "name": "Neeeophytee"
+  },
   "plugins": [
     {
       "name": "finding-unknowns",
