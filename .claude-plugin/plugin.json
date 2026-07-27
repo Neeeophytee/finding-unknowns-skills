@@ -1,9 +1,31 @@
 {
   "name": "finding-unknowns",
-  "description": "8 skills for finding your unknowns before, during, and after implementation: blindspot pass, brainstorm prototypes, interview me, reference hunt, implementation plan, implementation notes, pitch packager, change quiz.",
-  "version": "1.1.0",
+  "description": "11 skills for finding your unknowns and rightsizing the context you hand an agent: blindspot pass, brainstorm prototypes, interview me, reference hunt, implementation plan, implementation notes, pitch packager, change quiz, context audit, agent interface design, progressive disclosure.",
+  "version": "1.2.0",
   "author": {
     "name": "Neeeophytee"
   },
-  "homepage": "https://github.com/Neeeophytee/finding-unknowns-skills"
+  "homepage": "https://github.com/Neeeophytee/finding-unknowns-skills",
+  "repository": "https://github.com/Neeeophytee/finding-unknowns-skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "unknowns",
+    "context-engineering",
+    "planning",
+    "prompting"
+  ],
+  "skills": [
+    "./skills/blindspot-pass",
+    "./skills/brainstorm-prototypes",
+    "./skills/interview-me",
+    "./skills/reference-hunt",
+    "./skills/implementation-plan",
+    "./skills/implementation-notes",
+    "./skills/pitch-packager",
+    "./skills/change-quiz",
+    "./skills/context-audit",
+    "./skills/agent-interface-design",
+    "./skills/progressive-disclosure"
+  ]
 }

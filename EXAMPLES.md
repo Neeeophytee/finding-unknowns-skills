@@ -43,3 +43,19 @@ Real prompts for each skill. Adapt freely — the skill does the structuring; yo
 ## change-quiz
 
 > That was a long session. Give me a report on the changes — context, intuition, what interacts with what — and a quiz at the bottom that I must pass before we merge. Don't go easy.
+
+## context-audit
+
+> My CLAUDE.md is 400 lines and Claude still ignores half of it. Audit everything that reaches the model — CLAUDE.md, the skills, the hooks — and give me a cut list with the contradictions first.
+
+> Before we add another rule: read our agent instructions the way the model receives them and tell me which lines actually change behavior and which are just expensive.
+
+## agent-interface-design
+
+> I'm writing an MCP server for our deploy tooling. Design the tool signatures so the agent can't call them wrong, instead of me writing three paragraphs of usage notes per tool.
+
+> Claude keeps passing the wrong thing to this script. Don't add documentation — look at the interface and tell me what's badly named or too loosely typed.
+
+## progressive-disclosure
+
+> /progressive-disclosure — our code-review skill is 300 lines and most runs need about 40 of them. Split it so the rest loads only when it's relevant.
