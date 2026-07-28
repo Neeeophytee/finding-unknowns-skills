@@ -1,12 +1,21 @@
 # Repo notes
 
-This repo ships agent skills distilled from two Thariq Shihipar essays. It is a Claude Code plugin, its own single-plugin marketplace, and a plain `SKILL.md` collection installable into Codex, Kimi, and Cursor. Everything below is a gotcha about maintaining it — none of it ships to users.
+This repo ships agent skills distilled from two Thariq Shihipar essays. It is a Claude Code plugin, a Codex plugin, its own single-plugin marketplace on both, and a plain `SKILL.md` collection installable into Kimi, Cursor, and Hermes. Everything below is a gotcha about maintaining it — none of it ships to users.
 
 ## What ships, and the gate that decides
 
-`.claude-plugin/plugin.json`'s `skills` array is the ship gate. A skill directory that exists under `skills/` but is missing from that array **does not reach plugin users**, even though `npx skills add` and manual `cp -r` installs will still pick it up. Add every new skill to the array in the same commit that creates it, and use the array (not a separate folder) to hold anything not ready to ship.
+`.claude-plugin/plugin.json`'s `skills` array is the ship gate for the Claude Code plugin. A skill directory that exists under `skills/` but is missing from that array **does not reach Claude Code plugin users**, even though `npx skills add`, manual `cp -r`, the Codex plugin, and Hermes will still pick it up. (The Codex manifest uses `"skills": "./skills/"` — the whole directory — so it has no per-skill gate; the Claude array is the only explicit gate. Keep the array complete anyway; it's the intended control.) Add every new skill to the array in the same commit that creates it.
 
-`plugin.json`'s `version` is what tells already-installed users an update exists — bump it whenever a skill changes. `marketplace.json` carries no version field.
+## Version lives in THREE manifests — move them together
+
+`version` is what tells already-installed users an update exists. It is duplicated and must stay in lockstep:
+- `.claude-plugin/plugin.json`
+- `.codex-plugin/plugin.json`
+- (a root `plugin.json` too, if Antigravity support ever lands — see `FUTURE-EXTENSIONS.md`)
+
+`marketplace.json` and `.agents/plugins/marketplace.json` carry no version field. A version mismatch ships silently — no error, just wrong "update available" signals. Also tag the release (`git tag -a vX.Y.Z`) and `gh release create`; bumping the manifest alone does not create a GitHub release.
+
+Never add `Co-Authored-By` / AI-attribution trailers to commits, PRs, or releases — it registers a bot on the contributor list.
 
 ## Files that must be edited together
 
@@ -25,6 +34,25 @@ codex debug prompt-input                              # every skill name + descr
 ```
 
 The Codex check needs a git repo and a project-level `.agents/skills/`; it resolves from the nearest `.git` root, so a bare temp directory silently finds nothing.
+
+Codex **plugin** route (verify without touching real config — set `CODEX_HOME` to a temp dir):
+
+```
+export CODEX_HOME=/tmp/codexhome && mkdir -p $CODEX_HOME
+codex plugin marketplace add /path/to/this/repo
+codex plugin add finding-unknowns@finding-unknowns
+cd /tmp/anygitrepo && codex debug prompt-input     # all 11 skill names must appear
+```
+
+Hermes route (verify with an isolated `HERMES_HOME` — do NOT write to the user's `~/.hermes`):
+
+```
+export HERMES_HOME=/tmp/hermeshome && mkdir -p $HERMES_HOME
+printf 'skills:\n  external_dirs:\n    - /path/to/this/repo/skills\n' > $HERMES_HOME/config.yaml
+hermes skills list        # all 11 must show 'enabled'
+```
+
+`hermes plugins install` is the WRONG route for this repo — it's a Python-plugin system (wants `plugin.yaml`/`__init__.py`). Use `skills.external_dirs`. Install-doc receipts live in `INSTALL-CODEX.md` and `INSTALL-HERMES.md`; when a claim's version changes, re-run the matching check above and edit the doc to what you saw.
 
 ## Shipped guidance is not this file
 

@@ -79,7 +79,26 @@ cp -r finding-unknowns-skills/skills/* ~/.agents/skills/        # all projects
 # or, per project:  cp -r finding-unknowns-skills/skills/* your-repo/.agents/skills/
 ```
 
-Codex detects skill changes automatically. For the passive-guidance version, copy [`guidance/finding-unknowns.md`](guidance/finding-unknowns.md) into your project root as `AGENTS.md` — Codex reads it before doing any work. Re-tested with Codex CLI v0.143.0 at v1.2.0: all 11 skills and their descriptions load into the model-visible prompt (verify yourself with `codex debug prompt-input`). Note that Codex does not honour `disable-model-invocation`, so `progressive-disclosure` is model-reachable there. (Paths per the [Codex skills docs](https://developers.openai.com/codex/skills).)
+Prefer a managed bundle? Codex also installs the whole set as a **plugin**:
+
+```
+codex plugin marketplace add Neeeophytee/finding-unknowns-skills
+codex plugin add finding-unknowns@finding-unknowns
+```
+
+Codex detects skill changes automatically. For the passive-guidance version, copy [`guidance/finding-unknowns.md`](guidance/finding-unknowns.md) into your project root as `AGENTS.md` — Codex reads it before doing any work. Re-tested with Codex CLI v0.143.0 at v1.3.0: both routes load all 11 skills into the model-visible prompt (verify with `codex debug prompt-input`). Codex does not honour `disable-model-invocation`, so `progressive-disclosure` is model-reachable there. Full details and receipts: [INSTALL-CODEX.md](INSTALL-CODEX.md). (Paths per the [Codex skills docs](https://developers.openai.com/codex/skills).)
+
+### Use in Hermes Agent
+
+These are *skills*, not a Python plugin, so install them via Hermes's skills system, **not** `hermes plugins install`. Clone the repo and point Hermes at it in `~/.hermes/config.yaml`:
+
+```yaml
+skills:
+  external_dirs:
+    - ~/finding-unknowns-skills/skills
+```
+
+All 11 skills then register and appear on every Hermes surface. Verified live on Hermes Agent v0.15.1: all 11 load and show `enabled` in `hermes skills list`. Single-skill installs and full receipts: [INSTALL-HERMES.md](INSTALL-HERMES.md).
 
 ### Use in Kimi Code CLI (Kimi K3)
 
@@ -104,6 +123,19 @@ Project-level paths (`.kimi/skills/`, `.claude/skills/`, `.codex/skills/`, `.age
 - Your agent ignores its own instructions, or your CLAUDE.md has grown past reading → `context-audit`
 - You're building a tool, MCP server, or script an agent will call → `agent-interface-design`
 - One skill or spec got too long to keep loading in full → `/progressive-disclosure` (type it; it won't fire on its own)
+
+## Invoking a skill on each agent
+
+Same skills, different invocation syntax per agent. The model reaches them on its own from the descriptions; this is how *you* trigger one by hand:
+
+| Agent | How you invoke a skill | Install |
+|---|---|---|
+| Claude Code | `/context-audit` (slash command) | plugin or `npx skills add` |
+| OpenAI Codex | `$context-audit`, or the `/skills` picker | [plugin or skills](INSTALL-CODEX.md) |
+| Hermes Agent | `/context-audit` (slash command) | [`skills.external_dirs`](INSTALL-HERMES.md) |
+| Cursor / Kimi K3 | agent's own skills UI / `SKILL.md` autodiscovery | `npx skills add` |
+
+`progressive-disclosure` is user-invoked in Claude Code only — elsewhere it behaves as a normal model-invoked skill (see the per-agent notes above).
 
 See [EXAMPLES.md](EXAMPLES.md) for real prompts.
 
