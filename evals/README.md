@@ -38,4 +38,4 @@ Judge decisions and observable outcomes, not exact wording or section names. Che
 
 ## Current evidence
 
-The fixtures and deterministic probes are reproducible. No independent model comparison or cross-agent behavioral improvement is claimed for the new skills. The new skills remain release candidates pending maintainer review and behavioral trials.
+The fixtures and deterministic probes are reproducible. No independent model comparison or cross-agent behavioral improvement is claimed for the new skills. The new skills shipped in [v1.4.0](https://github.com/Neeeophytee/finding-unknowns-skills/releases/tag/v1.4.0). Comparative behavioral trials remain a future evidence milestone; publication does not establish behavioral improvement.

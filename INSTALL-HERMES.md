@@ -1,5 +1,7 @@
 # Finding-unknowns on Hermes Agent
 
+Release status: [v1.4.0 was published on September 9, 2026](https://github.com/Neeeophytee/finding-unknowns-skills/releases/tag/v1.4.0). References below to a September 8 candidate describe the environment tested at that time, not the current release status.
+
 These skills run on Nous Research's [Hermes Agent](https://hermes-agent.nousresearch.com) with no conversion — they're plain Agent-Skills-standard `SKILL.md` files, and unlike some skill packs there is **no engine, no scripts, and no hooks** to wire up. Installation is one config block.
 
 > Re-verified on 2026-09-08 with **Hermes Agent v0.15.1** against the local 1.4.0 candidate: all 13 skills show `enabled` in `hermes skills list`, using an isolated temporary configuration. See [COMPATIBILITY.md](COMPATIBILITY.md).
@@ -49,7 +51,7 @@ Hermes exposes each skill both by name for the model and as a slash command for 
 
 ## Honest status of the Hermes route
 
-- **Current candidate, verified on v0.15.1:** `external_dirs` registration — all 13 skills show `enabled`.
+- **Pre-release receipt, verified on v0.15.1:** `external_dirs` registration — all 13 skills show `enabled`.
 - **Historical v1.3.0 receipt:** all eleven skills showed `enabled` in the earlier check.
 - **Not verified:** the single-skill `hermes skills install owner/repo/skill` path (documented from `--help`, not run end-to-end), and whether Hermes honours `disable-model-invocation`.
 - engram's Hermes notes reference v0.18.2; behaviour on newer Hermes may differ from what was tested here.

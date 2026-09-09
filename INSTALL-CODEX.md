@@ -1,5 +1,7 @@
 # Finding-unknowns on OpenAI Codex
 
+Release status: [v1.4.0 was published on September 9, 2026](https://github.com/Neeeophytee/finding-unknowns-skills/releases/tag/v1.4.0). References below to a September 8 candidate describe the environment tested at that time, not the current release status.
+
 These skills run on Codex natively — they're the same Agent-Skills-standard `SKILL.md` files Claude Code uses, no conversion. You have two routes: install the whole set as a **plugin**, or install individual skills.
 
 > Re-verified on 2026-09-08 with **Codex CLI v0.143.0** against the local 1.4.0 candidate: both directory and plugin routes expose all 13 names and descriptions in `codex debug prompt-input`. The plugin reports version 1.4.0. Each route used its own temporary configuration; details in [COMPATIBILITY.md](COMPATIBILITY.md).
@@ -38,7 +40,7 @@ If you'd rather have the approach as always-on guidance than as commands, copy [
 
 ## Honest status of the Codex route
 
-- **Current candidate, verified on v0.143.0:** local plugin marketplace add + plugin add at 1.4.0; all 13 skills in the model-visible prompt through both routes.
+- **Pre-release receipt, verified on v0.143.0:** local plugin marketplace add + plugin add at 1.4.0; all 13 skills in the model-visible prompt through both routes.
 - **Historical v1.3.0 receipt:** all eleven skills were discovered in the earlier checks. Do not confuse this with new-skill behavioral evaluation.
 - The `$name` invocation and `/skills` picker behaviour is per Codex's documented model; the prompt-load itself is what was measured here.
 

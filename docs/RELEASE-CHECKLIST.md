@@ -1,6 +1,6 @@
-# Release checklist — 1.4.0 candidate
+# Release checklist — 1.4.0
 
-This is a local preparation checklist, not authorization to publish.
+Status: [v1.4.0 was published on September 9, 2026](https://github.com/Neeeophytee/finding-unknowns-skills/releases/tag/v1.4.0). This retained checklist documents the release procedure; it is not a pending release or authorization to republish.
 
 ## Verify the candidate
 

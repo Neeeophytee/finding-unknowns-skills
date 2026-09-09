@@ -1,8 +1,10 @@
 # Compatibility and verification
 
+Release status: [v1.4.0 was published on September 9, 2026](https://github.com/Neeeophytee/finding-unknowns-skills/releases/tag/v1.4.0). References below to a September 8 candidate describe the environment tested at that time, not the current release status.
+
 The collection uses flat, single-file Agent Skills. Installation discovery, invocation, and behavioral quality are separate claims. This matrix describes observed checks, not a promise that every agent interprets every instruction identically.
 
-## Local 1.4.0 candidate — 2026-09-08
+## Pre-release checks — 2026-09-08
 
 | Client / route | Version | Observed result | Limit |
 |---|---|---|---|

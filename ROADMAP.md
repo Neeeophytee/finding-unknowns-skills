@@ -2,11 +2,12 @@
 
 Ordered by usefulness, not a promised delivery date.
 
-## Next release — 1.4.0 candidate
+## Shipped — 1.4.0 (2026-09-09)
 
-- Preserve the eleven existing skills and add `assumption-test` and `test-blindspots`.
-- Validate packaging in CI and publish reproducible fixtures and honestly scoped compatibility receipts.
-- Make contribution guidelines, attribution, and worked examples easier to find.
+- Preserved the eleven existing skills and added `assumption-test` and `test-blindspots`.
+- Added CI packaging validation and published reproducible fixtures and honestly scoped compatibility receipts.
+- Made contribution guidelines, attribution, and worked examples easier to find.
+- Published [v1.4.0](https://github.com/Neeeophytee/finding-unknowns-skills/releases/tag/v1.4.0) and [public documentation](https://oss.flowstacks.xyz/finding-unknowns-skills).
 
 ## Next evidence milestone
 
@@ -17,7 +18,7 @@ Ordered by usefulness, not a promised delivery date.
 ## After that
 
 - Design `eval-design` from experience evaluating this collection, if it proves useful beyond our own repo.
-- Host public documentation and evaluation reports on a dedicated OSS deployment.
+- Publish behavioral evaluation reports alongside the existing public documentation.
 - Add interactive examples only when they teach something static examples cannot.
 - Prioritize community-reported gaps before further skill additions or platform integrations.
 

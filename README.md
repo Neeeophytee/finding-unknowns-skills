@@ -51,7 +51,7 @@ The eight above work on one task at a time. These three work on the instructions
 
 ### Two extensions for evidence
 
-These are maintainer-designed additions, informed by established testing practices. The original eleven skill files are unchanged in the 1.4.0 candidate.
+These are maintainer-designed additions, informed by established testing practices. The original eleven skill files are unchanged in the published [v1.4.0 release](https://github.com/Neeeophytee/finding-unknowns-skills/releases/tag/v1.4.0).
 
 | Skill | Phase | One line |
 |---|---|---|
@@ -104,7 +104,7 @@ codex plugin marketplace add Neeeophytee/finding-unknowns-skills
 codex plugin add finding-unknowns@finding-unknowns
 ```
 
-Codex detects skill changes automatically. For the passive-guidance version, copy [`guidance/finding-unknowns.md`](guidance/finding-unknowns.md) into your project root as `AGENTS.md` — Codex reads it before doing any work. Re-tested on 2026-09-08 with Codex CLI v0.143.0 against the local v1.4.0 candidate: both routes load all 13 skills into the model-visible prompt (verify with `codex debug prompt-input`). Codex does not honour `disable-model-invocation`, so `progressive-disclosure` is model-reachable there. Full details and receipts: [INSTALL-CODEX.md](INSTALL-CODEX.md). (Paths per the [Codex skills docs](https://developers.openai.com/codex/skills).)
+Codex detects skill changes automatically. For the passive-guidance version, copy [`guidance/finding-unknowns.md`](guidance/finding-unknowns.md) into your project root as `AGENTS.md` — Codex reads it before doing any work. Re-tested on 2026-09-08 with Codex CLI v0.143.0 against the pre-release v1.4.0 build (released September 9): both routes load all 13 skills into the model-visible prompt (verify with `codex debug prompt-input`). Codex does not honour `disable-model-invocation`, so `progressive-disclosure` is model-reachable there. Full details and receipts: [INSTALL-CODEX.md](INSTALL-CODEX.md). (Paths per the [Codex skills docs](https://developers.openai.com/codex/skills).)
 
 ### Use in Hermes Agent
 
@@ -116,7 +116,7 @@ skills:
     - ~/finding-unknowns-skills/skills
 ```
 
-Re-tested on 2026-09-08 with Hermes Agent v0.15.1 against the local v1.4.0 candidate: all 13 skills show `enabled` in `hermes skills list`. Other Hermes surfaces were not exercised in this check. Single-skill installs and full receipts: [INSTALL-HERMES.md](INSTALL-HERMES.md).
+Re-tested on 2026-09-08 with Hermes Agent v0.15.1 against the pre-release v1.4.0 build (released September 9): all 13 skills show `enabled` in `hermes skills list`. Other Hermes surfaces were not exercised in this check. Single-skill installs and full receipts: [INSTALL-HERMES.md](INSTALL-HERMES.md).
 
 ### Use in Kimi Code CLI (Kimi K3)
 
@@ -172,7 +172,9 @@ The two maintainer-designed extensions are not attributed to those essays. `assu
 
 ## Community
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) to propose a skill or report a problem. Community participation follows our [Code of Conduct](CODE_OF_CONDUCT.md). [CHANGELOG.md](CHANGELOG.md) records releases and the current candidate.
+Explore the [live project page](https://oss.flowstacks.xyz/finding-unknowns-skills) for the skill collection and [community coverage](https://oss.flowstacks.xyz/finding-unknowns-skills#community).
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) to propose a skill or report a problem. Community participation follows our [Code of Conduct](CODE_OF_CONDUCT.md). [CHANGELOG.md](CHANGELOG.md) records published releases.
 
 ## License
 

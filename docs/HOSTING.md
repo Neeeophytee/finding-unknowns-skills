@@ -1,28 +1,38 @@
-# OSS page hosting
+# FlowStacks OSS hosting
 
-The page is prepared locally; no site registration, deployment, or domain change has been performed. It uses static HTML and CSS, with its catalog generated from the actual skills. The skill packages themselves gain no website runtime dependency.
+## Live deployment — 2026-09-09
 
-## Local preview
+- Vercel team: `neophytes-projects-242f42c6` (the same team as FlowStacks).
+- Separate project: `flowstacks-oss`.
+- Public hub: https://oss.flowstacks.xyz
+- Finding Unknowns page: https://oss.flowstacks.xyz/finding-unknowns-skills
+- Custom domain: https://oss.flowstacks.xyz
+- Production deployment: `dpl_FjRSySVSGjQ897piARkfVa7Mw2tM`.
 
-In the development Python environment:
+All nine pages and the shared CSS/icon returned HTTP 200 without authentication. Private deployment configuration paths returned 404. The page uses FlowStacks’ cream/chocolate palette, Fraunces headings, Geist body type, and existing logomark.
+
+## Custom domain and main-site links
+
+`oss.flowstacks.xyz` is live with HTTPS. Authoritative DNS is hosted by Hostinger (`hermes.dns-parking.com` and `artemis.dns-parking.com`). FlowStacks desktop navigation, mobile navigation, and footer now link to this custom domain.
+
+Cards are sorted by the star-count snapshot recorded in `site/projects.json` on September 9, 2026. Star badges refresh independently; ordering changes when those recorded counts are refreshed and the site is rebuilt. Each card links directly to its repository through “Star it.” Each project page links to its contribution guide, or GitHub’s repository contribution page when no guide exists.
+
+## Source and rebuild
+
+`site/projects.json` is the reviewed eight-project catalog. `scripts/build_site.py` generates the directory, one page per project, the sitemap, and static deployment configuration into ignored `site/dist/`. The Finding Unknowns skill listing comes directly from its unchanged SKILL.md files.
 
 ```bash
 python scripts/build_site.py
-python -m http.server 8765 --bind 127.0.0.1 --directory site/dist
 ```
 
-The generated output is ignored by Git. Source files are in `site/` and `scripts/build_site.py`.
+Use the development Python environment from CONTRIBUTING.md. Vercel serves clean URLs; a generic local static server may require the `.html` suffix on project-page URLs. No website code runs inside installed skills.
 
-## Intended Vercel deployment
+The deployment is a direct static upload, not an automatic Git integration. Website source is maintained in this repository; publishing it to GitHub does not automatically redeploy Vercel. The separate license-detection correction was already pushed and GitHub now reports MIT.
 
-After publication authorization, use a separate Vercel project for the OSS page. Build the static output using the development dependencies and `python scripts/build_site.py`, then publish only `site/dist`. If the selected Vercel build environment lacks Python, generate this output in CI and deploy it as a static directory. Verify the chosen setup before documenting it as working.
+## License labels
 
-Do not attach the commercial application, credentials, or billing resources to this project. Domain routing for `flowstacks.xyz/open-source/finding-unknowns-skills` needs review in the actual FlowStacks project; this repository does not change that routing. A dedicated subdomain is another option if routing would otherwise require changes to the commercial app.
+Finding Unknowns, Agent Stylebooks, AI Cost-Cutter Skills, and Accessibility Agent Skills are labeled MIT. Awesome AI Workflows is CC0-1.0; AI Watermarks Reality Check is AGPL-3.0. MCP Stateless Conformance and Agent Arena Skill have no declared license in the checked files and are clearly labeled as public repositories with no declared reuse license.
 
-## Before making the page public
+## OSS program scope
 
-- Publish the approved repository release first: the page's GitHub links and install command target the public default branch.
-- Confirm the Code of Conduct reporting address is monitored.
-- Review the copy that identifies this as a local candidate; update it only to the actual published state.
-- Verify the deployed page and navigation on the chosen host. No live-hosting compatibility is claimed from a local build.
-- Add adoption metrics only after capturing current source evidence. None are hardcoded into the page.
+Apply for Finding Unknowns using its dedicated page and repository. Explain that the site also lists other projects; do not assume that credits awarded for one project cover unrelated pages. Confirm the permitted shared-hosting scope with Vercel before using program credits.

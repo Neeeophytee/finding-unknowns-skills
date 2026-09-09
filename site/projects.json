@@ -1,0 +1,178 @@
+[
+  {
+    "slug": "finding-unknowns-skills",
+    "name": "Finding Unknowns",
+    "repo": "Neeeophytee/finding-unknowns-skills",
+    "category": "Agent skills",
+    "license": "MIT",
+    "tagline": "Find the unknowns before they get expensive.",
+    "description": "Thirteen portable workflows for surfacing blindspots, making decisions, testing assumptions, and reviewing what an agent built.",
+    "audience": "Developers working with coding agents on unfamiliar code, ambiguous requirements, or changes that need stronger evidence.",
+    "features": [
+      "Surface hidden context before choosing an approach.",
+      "Turn an uncertain technical assumption into a bounded experiment.",
+      "Investigate what green tests miss and preserve the evidence."
+    ],
+    "command": "npx skills add Neeeophytee/finding-unknowns-skills",
+    "example": "Before committing to this integration, test whether replaying the same webhook can create duplicate orders.",
+    "outcome": "A reproducible experiment, a verdict limited to the tested conditions, and the decision that changes as a result.",
+    "limits": "Discovery and packaging checks are distinct from behavioral evaluation. Eleven workflows draw on Thariq Shihipar’s essays; two are maintainer-designed extensions. Sources remain credited in the repository.",
+    "stars": 327,
+    "stars_checked_at": "2026-09-09",
+    "contribute_url": "https://github.com/Neeeophytee/finding-unknowns-skills/blob/main/CONTRIBUTING.md"
+  },
+  {
+    "slug": "mcp-stateless-conformance",
+    "name": "MCP Stateless Conformance",
+    "repo": "Neeeophytee/mcp-stateless-conformance",
+    "category": "Protocol evidence",
+    "license": "Not declared",
+    "tagline": "Inspect the protocol behavior behind the endpoint.",
+    "description": "A reproducible conformance probe and public results for remote MCP servers against the 2026-07-28 specification.",
+    "audience": "MCP server maintainers and integration developers who need observed behavior rather than a self-reported compatibility claim.",
+    "features": [
+      "Review the public server corpus and recorded observations.",
+      "Distinguish conformant, legacy, gated, and unreachable endpoints.",
+      "Inspect the probe source and re-run it against an appropriate test corpus."
+    ],
+    "command": null,
+    "example": "Does this server answer a cold request with the required stateless protocol surface?",
+    "outcome": "A recorded response and a scoped conformance verdict, with inaccessible endpoints kept separate from demonstrated failures.",
+    "limits": "Results are dated observations. Server counts and operator counts are different adoption signals. No license was declared in the repository files checked on September 9, 2026.",
+    "stars": 1,
+    "stars_checked_at": "2026-09-09",
+    "contribute_url": "https://github.com/Neeeophytee/mcp-stateless-conformance/blob/main/CONTRIBUTING.md"
+  },
+  {
+    "slug": "awesome-ai-workflows",
+    "name": "Awesome AI Workflows",
+    "repo": "Neeeophytee/awesome-ai-workflows",
+    "category": "Workflow library",
+    "license": "CC0-1.0",
+    "tagline": "Start with a workflow you can inspect.",
+    "description": "A curated collection of AI workflow recipes with links, implementation context, and verification evidence from FlowStacks.",
+    "audience": "Builders choosing an AI workflow and looking for a concrete starting point they can adapt to their own tools and constraints.",
+    "features": [
+      "Explore recipes by the problem they address.",
+      "Follow links to the workflow and its supporting evidence.",
+      "Contribute useful recipes and corrections to the collection."
+    ],
+    "command": null,
+    "example": "Find a workflow for this task, then inspect which parts were actually checked.",
+    "outcome": "A reference recipe and its verification scope, ready to assess against your own workload.",
+    "limits": "The collection’s selection and arrangement use CC0. Linked workflows and the FlowStacks platform retain their own terms. Recipe checks do not establish model quality for every workload.",
+    "stars": 28,
+    "stars_checked_at": "2026-09-09",
+    "contribute_url": "https://github.com/Neeeophytee/awesome-ai-workflows/blob/main/CONTRIBUTING.md"
+  },
+  {
+    "slug": "agent-stylebooks",
+    "name": "Agent Stylebooks",
+    "repo": "Neeeophytee/agent-stylebooks",
+    "category": "Editorial systems",
+    "license": "MIT",
+    "tagline": "Choose the writing system before the model chooses one.",
+    "description": "Sixteen portable editorial systems that guide structure, clarity, and review around the reader’s actual task.",
+    "audience": "Teams writing documentation, interface copy, public information, reports, or specifications with AI assistance.",
+    "features": [
+      "Choose a stylebook by the artifact and the reader’s task.",
+      "Make information order and editing criteria explicit.",
+      "Keep source provenance and editorial limits visible."
+    ],
+    "command": "npx skills add Neeeophytee/agent-stylebooks",
+    "example": "Use google-developer-docs to turn these notes into a setup guide.",
+    "outcome": "A guide organized around prerequisites and actions, with supplied facts and technical meaning preserved.",
+    "limits": "These are independently written, community-maintained interpretations of public guidance, not official source-organization products. Third-party guides retain their own terms.",
+    "stars": 59,
+    "stars_checked_at": "2026-09-09",
+    "contribute_url": "https://github.com/Neeeophytee/agent-stylebooks/blob/main/CONTRIBUTING.md"
+  },
+  {
+    "slug": "ai-watermarks-reality-check",
+    "name": "AI Watermarks Reality Check",
+    "repo": "Neeeophytee/ai-watermarks-reality-check",
+    "category": "Provenance evidence",
+    "license": "AGPL-3.0",
+    "tagline": "Check the evidence. Keep the unknowns visible.",
+    "description": "Seven agent skills for inspecting provenance, verifying supported credentials, and testing what survives a publishing pipeline.",
+    "audience": "Teams handling AI-assisted media and documents who need to distinguish observed metadata, verified credentials, and unavailable evidence.",
+    "features": [
+      "Inspect supported file and text provenance signals.",
+      "Separate credential integrity from signer trust.",
+      "Compare originals and derivatives without modifying the source."
+    ],
+    "command": "npx skills add Neeeophytee/ai-watermarks-reality-check",
+    "example": "Compare the original image and its published copy. Which provenance evidence survives, and what cannot be verified?",
+    "outcome": "A scoped survival report that separates present, missing, verified, and unavailable evidence.",
+    "limits": "This is not a universal AI-authorship detector. Unsupported or unavailable detectors remain unknown. Cryptographic verification requires suitable local tooling and trust configuration.",
+    "stars": 13,
+    "stars_checked_at": "2026-09-09",
+    "contribute_url": "https://github.com/Neeeophytee/ai-watermarks-reality-check/blob/main/CONTRIBUTING.md"
+  },
+  {
+    "slug": "ai-cost-cutter-skills",
+    "name": "AI Cost-Cutter Skills",
+    "repo": "Neeeophytee/ai-cost-cutter-skills",
+    "category": "Cost & evaluation",
+    "license": "MIT",
+    "tagline": "Make the cheaper path earn your trust.",
+    "description": "Ten skills for investigating AI spend, routing work, trimming context, and comparing cheaper approaches with explicit checks.",
+    "audience": "Developers reducing AI costs while preserving the behavior their workload actually needs.",
+    "features": [
+      "Attribute spend before choosing a cost intervention.",
+      "Compare alternatives with criteria stated before the trial.",
+      "Keep deterministic checks separate from workload-specific quality claims."
+    ],
+    "command": "npx skills add Neeeophytee/ai-cost-cutter-skills",
+    "example": "Audit our token receipts, identify the expensive tasks, and propose one cheaper route with a check for quality loss.",
+    "outcome": "An evidence-backed cost hypothesis and a workload-specific comparison, rather than an assumed saving.",
+    "limits": "The repository runs deterministic proof blocks in CI. Actual model quality and cost must be measured on your workload; provider prices and limits can change.",
+    "stars": 18,
+    "stars_checked_at": "2026-09-09",
+    "contribute_url": "https://github.com/Neeeophytee/ai-cost-cutter-skills/contribute"
+  },
+  {
+    "slug": "agent-arena-skill",
+    "name": "Agent Arena Skill",
+    "repo": "Neeeophytee/agent-arena-skill",
+    "category": "Agent discovery",
+    "license": "Not declared",
+    "tagline": "Explore agent services through a documented interface.",
+    "description": "A skill reference for discovering agent capabilities, inspecting profiles and reputation, and using Agent Arena’s hosted API.",
+    "audience": "Developers integrating agent discovery and service comparison into agent workflows.",
+    "features": [
+      "Search for agents by capability.",
+      "Inspect profile and reputation information.",
+      "Review the hosted API’s service and payment requirements."
+    ],
+    "command": null,
+    "example": "Find agents with this capability and inspect their profiles before choosing a service.",
+    "outcome": "Candidate profiles and documented API interactions for the caller to assess.",
+    "limits": "This project describes a hosted API. Some operations incur charges or on-chain effects; follow the current API documentation. No license was declared in the repository files checked on September 9, 2026.",
+    "stars": 2,
+    "stars_checked_at": "2026-09-09",
+    "contribute_url": "https://github.com/Neeeophytee/agent-arena-skill/contribute"
+  },
+  {
+    "slug": "a11y-agent-skills",
+    "name": "Accessibility Agent Skills",
+    "repo": "smukh/a11y-agent-skills",
+    "category": "Accessibility",
+    "license": "MIT",
+    "tagline": "Find the regression. Fix the source. Prove the repair.",
+    "description": "Seven portable skills plus CLI and MCP tools for accessibility evidence, conservative repairs, verification, and regression protection.",
+    "audience": "Teams building interfaces with AI who want accessibility findings tied to reproducible states and source changes.",
+    "features": [
+      "Capture scoped findings with Playwright and axe-core.",
+      "Verify a repair against the same page state and baseline.",
+      "Preserve focused regression tests for the repaired behavior."
+    ],
+    "command": "npx skills@1.5.9 add smukh/a11y-agent-skills",
+    "example": "Audit this checkout state, fix one confirmed issue in the source, and replay the same state to verify the repair.",
+    "outcome": "Before-and-after evidence with resolved, remaining, and newly introduced findings kept distinct.",
+    "limits": "Automated and agent-assisted checks cover a subset of accessibility barriers. They do not certify WCAG conformance or replace human accessibility testing.",
+    "stars": 7,
+    "stars_checked_at": "2026-09-09",
+    "contribute_url": "https://github.com/smukh/a11y-agent-skills/blob/main/CONTRIBUTING.md"
+  }
+]
