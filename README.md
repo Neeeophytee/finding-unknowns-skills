@@ -176,7 +176,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) to propose a skill or report a problem. 
 
 ## License
 
-[MIT](LICENSE) for the skill text in this repo. Sources and method attribution are documented above. The Code of Conduct retains its own Contributor Covenant attribution.
+[MIT](LICENSE) for the skill text in this repo. Sources and method attribution are documented above and in [NOTICE.md](NOTICE.md). The Code of Conduct retains its own Contributor Covenant attribution.
 
 ---
 
