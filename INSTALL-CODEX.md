@@ -2,9 +2,9 @@
 
 These skills run on Codex natively — they're the same Agent-Skills-standard `SKILL.md` files Claude Code uses, no conversion. You have two routes: install the whole set as a **plugin**, or install individual skills.
 
-> Verified on **Codex CLI v0.143.0**: the plugin installs at version 1.3.0 and all 11 skills load into the model-visible prompt (`codex debug prompt-input`). Receipts below.
+> Re-verified on 2026-09-08 with **Codex CLI v0.143.0** against the local 1.4.0 candidate: both directory and plugin routes expose all 13 names and descriptions in `codex debug prompt-input`. The plugin reports version 1.4.0. Each route used its own temporary configuration; details in [COMPATIBILITY.md](COMPATIBILITY.md).
 
-## Route A — as a plugin (all 11 skills)
+## Route A — as a plugin (all skills)
 
 ```bash
 codex plugin marketplace add Neeeophytee/finding-unknowns-skills   # or /plugin marketplace add in-session
@@ -38,7 +38,8 @@ If you'd rather have the approach as always-on guidance than as commands, copy [
 
 ## Honest status of the Codex route
 
-- **Verified on v0.143.0:** plugin marketplace add + plugin add + all 11 skills in the model-visible prompt; `npx skills add` discovery of all 11.
+- **Current candidate, verified on v0.143.0:** local plugin marketplace add + plugin add at 1.4.0; all 13 skills in the model-visible prompt through both routes.
+- **Historical v1.3.0 receipt:** all eleven skills were discovered in the earlier checks. Do not confuse this with new-skill behavioral evaluation.
 - The `$name` invocation and `/skills` picker behaviour is per Codex's documented model; the prompt-load itself is what was measured here.
 
 (Paths per the [Codex skills docs](https://developers.openai.com/codex/skills).)

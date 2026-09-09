@@ -2,7 +2,7 @@
 
 These skills run on Nous Research's [Hermes Agent](https://hermes-agent.nousresearch.com) with no conversion — they're plain Agent-Skills-standard `SKILL.md` files, and unlike some skill packs there is **no engine, no scripts, and no hooks** to wire up. Installation is one config block.
 
-> Verified live on **Hermes Agent v0.15.1**: all 11 skills register and show `enabled` in `hermes skills list`. (Receipts below.)
+> Re-verified on 2026-09-08 with **Hermes Agent v0.15.1** against the local 1.4.0 candidate: all 13 skills show `enabled` in `hermes skills list`, using an isolated temporary configuration. See [COMPATIBILITY.md](COMPATIBILITY.md).
 
 ## Install — point Hermes at the skills
 
@@ -22,7 +22,7 @@ skills:
     - ~/finding-unknowns-skills/skills
 ```
 
-That's the whole install. All 11 skills join the agent's skill index for natural-language activation and appear as slash commands on every Hermes surface (CLI, TUI, dashboard, Telegram, Discord, …). Pull the repo to update; no re-register needed.
+That's the whole install. The skills join the agent's skill index. The current check verifies CLI listing; it does not exercise every Hermes surface or invocation. Pull the repo to update; no re-register needed.
 
 ## Alternatively — single skills, no clone
 
@@ -49,6 +49,7 @@ Hermes exposes each skill both by name for the model and as a slash command for 
 
 ## Honest status of the Hermes route
 
-- **Verified on v0.15.1:** `external_dirs` registration — all 11 skills load and show `enabled`.
+- **Current candidate, verified on v0.15.1:** `external_dirs` registration — all 13 skills show `enabled`.
+- **Historical v1.3.0 receipt:** all eleven skills showed `enabled` in the earlier check.
 - **Not verified:** the single-skill `hermes skills install owner/repo/skill` path (documented from `--help`, not run end-to-end), and whether Hermes honours `disable-model-invocation`.
 - engram's Hermes notes reference v0.18.2; behaviour on newer Hermes may differ from what was tested here.

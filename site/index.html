@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portable skills for finding unknowns before they become expensive. Explore the workflows, installation options, and reproducible examples.">
+  <title>Finding Unknowns — skills for better decisions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap"><a class="wordmark" href="#">Finding Unknowns<span class="dot">.</span></a><nav aria-label="Main"><a href="#skills">Skills</a><a href="#examples">Examples</a><a href="#install">Install</a><a href="https://github.com/Neeeophytee/finding-unknowns-skills">GitHub ↗</a></nav></header>
+  <main id="main">
+    <section class="hero wrap">
+      <p class="eyebrow">OPEN SOURCE / MIT / {{count}} PORTABLE SKILLS</p>
+      <h1>Find the unknowns.<br><span>Before they get expensive.</span></h1>
+      <p class="intro">A small collection of coding-agent workflows that make hidden assumptions visible, help you decide, and turn uncertainty into evidence.</p>
+      <a class="button" href="#install">Install the skills <span aria-hidden="true">↓</span></a>
+      <p class="note">Works with the Agent Skills format. <a href="#compatibility">See what we have verified.</a></p>
+    </section>
+    <section class="band"><div class="wrap workflow"><h2>A question is a starting point.</h2><ol><li><strong>Find</strong><span>Notice the missing context.</span></li><li><strong>Decide</strong><span>Make the important choices explicit.</span></li><li><strong>Test</strong><span>Look for evidence that changes the plan.</span></li></ol></div></section>
+    <section id="skills" class="wrap section"><div class="section-heading"><p class="eyebrow">THE COLLECTION</p><h2>Choose the uncertainty you need to resolve.</h2></div><div class="skills">{{skills}}</div></section>
+    <section id="examples" class="wrap section"><p class="eyebrow">FROM QUESTION TO EVIDENCE</p><h2>Two small checks. Two different decisions.</h2><p class="intro small">These reproducible teaching fixtures demonstrate the workflow. They are not agent benchmark results.</p><div class="examples"><article><span class="number">01 / ASSUMPTION TEST</span><h3>“Will retries create duplicate orders?”</h3><p>The plan assumes one order per event ID. Deliver the same event twice to the local handler.</p><pre>Expected: 1 order
+Observed: 2 orders</pre><p><strong>Decision:</strong> Add idempotency to the plan before treating retries as safe. Concurrent delivery still needs its own check.</p></article><article><span class="number">02 / TEST BLINDSPOTS</span><h3>“What do our passing tests miss?”</h3><p>The baseline passes. Try an administrator from tenant A against a document in tenant B.</p><pre>Expected: access denied
+Observed: access allowed</pre><p><strong>Decision:</strong> Preserve a tenant-boundary regression case before claiming the suite establishes isolation.</p></article></div><p><a href="https://github.com/Neeeophytee/finding-unknowns-skills/blob/main/evals/README.md">Explore the fixtures and evaluation protocol ↗</a></p></section>
+    <section id="install" class="band"><div class="wrap section"><p class="eyebrow">GET STARTED</p><h2>Pick one skill, or take the collection.</h2><p>Preview the available skills before choosing what to install.</p><pre class="install">npx skills add Neeeophytee/finding-unknowns-skills --list</pre><pre class="install">npx skills add Neeeophytee/finding-unknowns-skills</pre><p>For a single skill, append <code>--skill blindspot-pass</code>. Use a Node version supported by the skills CLI.</p><p><a href="https://github.com/Neeeophytee/finding-unknowns-skills#install">Plugin and manual installation instructions ↗</a> · <a href="https://skills.sh/neeeophytee/finding-unknowns-skills">Find us on skills.sh ↗</a></p></div></section>
+    <section id="compatibility" class="wrap section"><p class="eyebrow">COMPATIBILITY</p><h2>Portable files. Specific verification.</h2><div class="table-wrap"><table><caption>Local candidate {{version}}, checked September 8, 2026</caption><thead><tr><th scope="col">Route</th><th scope="col">Observed</th></tr></thead><tbody><tr><td>Codex 0.143.0 / directory and plugin</td><td>All {{count}} names and descriptions appear in the prompt.</td></tr><tr><td>Hermes 0.15.1 / external directory</td><td>All {{count}} skills are listed as enabled.</td></tr><tr><td>Claude Code / Cursor / Kimi</td><td>Packaging retained; live invocation not re-tested here.</td></tr></tbody></table></div><p>Discovery does not establish behavioral quality. The original eleven skill files are unchanged; independent comparisons for the two additions are pending.</p><a href="https://github.com/Neeeophytee/finding-unknowns-skills/blob/main/COMPATIBILITY.md">Read verification details and limitations ↗</a></section>
+    <section class="wrap section about"><div><p class="eyebrow">THE IDEA AND THE WORK</p><h2>Built from a useful question.</h2><p>What does your prompt leave out? Eleven skills distill two essays by Thariq Shihipar with attribution and original instruction text. Two maintainer-designed extensions apply established testing methods to the next question: what would change our minds?</p><p>We maintain the instruction flows, portable packaging, examples, and checks. This is an independent community project, not an official Anthropic repository.</p><a href="https://github.com/Neeeophytee/finding-unknowns-skills#credit">Read the sources and attribution ↗</a></div><div><p class="eyebrow">BUILD IT WITH US</p><h2>Bring a real unknown.</h2><p>The best contribution starts with a situation where a skill fell short. Share the request, what happened, and the decision you needed help making.</p><p><a href="https://github.com/Neeeophytee/finding-unknowns-skills/blob/main/CONTRIBUTING.md">Contributing ↗</a><br><a href="https://github.com/Neeeophytee/finding-unknowns-skills/blob/main/ROADMAP.md">Roadmap ↗</a><br><a href="https://github.com/Neeeophytee/finding-unknowns-skills/blob/main/CODE_OF_CONDUCT.md">Code of Conduct ↗</a></p></div></section>
+  </main>
+  <footer class="wrap"><span>Finding Unknowns · MIT licensed skill text</span><a href="https://github.com/Neeeophytee/finding-unknowns-skills">Source on GitHub ↗</a></footer>
+</body>
+</html>

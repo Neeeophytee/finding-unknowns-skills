@@ -1,7 +1,7 @@
 {
   "name": "finding-unknowns",
-  "version": "1.3.0",
-  "description": "11 skills for finding your unknowns and rightsizing the context you hand an agent: blindspot pass, brainstorm prototypes, interview me, reference hunt, implementation plan, implementation notes, pitch packager, change quiz, context audit, agent interface design, progressive disclosure.",
+  "version": "1.4.0",
+  "description": "13 skills for finding your unknowns and rightsizing the context you hand an agent: agent interface design, assumption test, blindspot pass, brainstorm prototypes, change quiz, context audit, implementation notes, implementation plan, interview me, pitch packager, progressive disclosure, reference hunt, test blindspots.",
   "author": {
     "name": "Neeeophytee"
   },

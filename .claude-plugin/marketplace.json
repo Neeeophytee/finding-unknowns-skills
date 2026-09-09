@@ -7,7 +7,7 @@
     {
       "name": "finding-unknowns",
       "source": "./",
-      "description": "Skills that surface your unknown unknowns before they get expensive: blindspot pass, brainstorms, interviews, references, plans, notes, pitches, a merge quiz — plus a context audit, agent interface design, and progressive disclosure for the instructions your agent carries into every task.",
+      "description": "Skills for finding unknowns before they get expensive, testing assumptions, examining test blindspots, and rightsizing agent context.",
       "category": "engineering",
       "keywords": [
         "skills",

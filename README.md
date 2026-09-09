@@ -1,12 +1,19 @@
 # Finding-Unknowns Skills
 
-**11 installable skills that make Claude help you find what you don't know — before it gets expensive to fix.**
+[![GitHub stars](https://img.shields.io/github/stars/Neeeophytee/finding-unknowns-skills?style=flat)](https://github.com/Neeeophytee/finding-unknowns-skills/stargazers)
+[![skills.sh installs](https://skills.sh/b/neeeophytee/finding-unknowns-skills)](https://skills.sh/neeeophytee/finding-unknowns-skills)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Validate skills](https://github.com/Neeeophytee/finding-unknowns-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/Neeeophytee/finding-unknowns-skills/actions/workflows/validate.yml)
 
-The map is not the territory. Your prompt is a map; the codebase and the real world are the territory. The gap between them is your *unknowns*, and with strong models the quality of the work is bottlenecked by how well you clarify them. These skills turn that idea, from [Thariq Shihipar's](https://thariqs.github.io/html-effectiveness/unknowns/) essay *A Field Guide to Fable: Finding Your Unknowns*, into commands you can run in Claude Code, OpenAI Codex, Kimi Code CLI (Kimi K3), or any agent that reads the [agentskills.io](https://agentskills.io) SKILL.md format.
+**13 installable skills that help your coding agent find what you don't know — before it gets expensive to fix.**
 
-Three of them come from his follow-up, [*The new rules of context engineering for Claude 5 generation models*](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models), which works one layer up: not the unknowns in a single prompt, but the ones baked into the context every prompt inherits.
+The map is not the territory. Your prompt is a map; the codebase and the real world are the territory. The gap between them is your *unknowns*, and with strong models the quality of the work is bottlenecked by how well you clarify them. The original eight task-level skills turn that idea, from [Thariq Shihipar's](https://thariqs.github.io/html-effectiveness/unknowns/) essay *A Field Guide to Fable: Finding Your Unknowns*, into commands you can run in Claude Code, OpenAI Codex, Kimi Code CLI (Kimi K3), or any agent that reads the [agentskills.io](https://agentskills.io) SKILL.md format.
 
-> Community project. Distilled, with attribution, from public essays by Thariq Shihipar (Anthropic, Claude Code team). **Not an official Anthropic repository.**
+Another three come from his follow-up, [*The new rules of context engineering for Claude 5 generation models*](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models), which works one layer up: not the unknowns in a single prompt, but the ones baked into the context every prompt inherits.
+
+> Community project. Eleven skills distilled, with attribution, from public essays by Thariq Shihipar (Anthropic, Claude Code team), plus two maintainer-designed extensions. **Not an official Anthropic repository.**
+
+The contribution here is the reusable instruction design: focused triggers, concrete deliverables, scope boundaries, portable packaging, and documented checks. The new extensions take the workflow from identifying unknowns to testing them. [Examples](EXAMPLES.md) · [Compatibility](COMPATIBILITY.md) · [Contributing](CONTRIBUTING.md) · [Roadmap](ROADMAP.md)
 
 ## The idea in one table
 
@@ -42,6 +49,17 @@ The eight above work on one task at a time. These three work on the instructions
 
 `progressive-disclosure` ships with `disable-model-invocation: true`. **In Claude Code** that makes it user-invoked only — it stays out of the model's reach and costs nothing in your context window until you type its name. **Codex ignores the flag** (verified on v0.143: the skill and its description still load into the model-visible prompt), so treat it as a normal model-invoked skill there.
 
+### Two extensions for evidence
+
+These are maintainer-designed additions, informed by established testing practices. The original eleven skill files are unchanged in the 1.4.0 candidate.
+
+| Skill | Phase | One line |
+|---|---|---|
+| [`assumption-test`](skills/assumption-test/SKILL.md) | Before | Turn a consequential technical assumption into a bounded, falsifiable experiment |
+| [`test-blindspots`](skills/test-blindspots/SKILL.md) | During / after | Investigate what passing tests do not establish, with focused probes and reproducible evidence |
+
+The additions have packaging and discovery checks. [Evaluation protocol and fixtures](evals/README.md).
+
 ## Install
 
 **One command, any agent (recommended):** Vercel's `skills` CLI auto-detects your coding agent (Claude Code, Cursor, Codex, Copilot, Gemini, and more) and installs the skills into the right place for each:
@@ -50,9 +68,9 @@ The eight above work on one task at a time. These three work on the instructions
 npx skills add Neeeophytee/finding-unknowns-skills
 ```
 
-Add `--list` to preview the 11 skills first, or `--skill blindspot-pass` to install just one. (Discoverable on [skills.sh](https://skills.sh).)
+Add `--list` to preview the 13 skills first, or `--skill blindspot-pass` to install just one. (Discoverable on [skills.sh](https://skills.sh).)
 
-**As a Claude Code plugin (all 11 skills):**
+**As a Claude Code plugin (all 13 skills):**
 
 ```
 /plugin marketplace add Neeeophytee/finding-unknowns-skills
@@ -67,7 +85,7 @@ Add `--list` to preview the 11 skills first, or `--skill blindspot-pass` to inst
 
 ### Use in Cursor
 
-The `npx skills add Neeeophytee/finding-unknowns-skills` command above detects Cursor and installs the skills into `~/.cursor/skills/` for you — no manual step. (Re-verified at v1.2.0 with `skills@1.5.20`: the CLI discovers all 11 skills in this repo, and their descriptions, via `--list`.)
+The `npx skills add Neeeophytee/finding-unknowns-skills` command above detects Cursor and installs the skills into `~/.cursor/skills/` for you — no manual step. (Historical receipt: at v1.2.0, `skills@1.5.20 --list` discovered eleven skills and descriptions. Current discovery results are recorded in [COMPATIBILITY.md](COMPATIBILITY.md); CLI discovery alone does not verify Cursor invocation.)
 
 ### Use in OpenAI Codex
 
@@ -86,7 +104,7 @@ codex plugin marketplace add Neeeophytee/finding-unknowns-skills
 codex plugin add finding-unknowns@finding-unknowns
 ```
 
-Codex detects skill changes automatically. For the passive-guidance version, copy [`guidance/finding-unknowns.md`](guidance/finding-unknowns.md) into your project root as `AGENTS.md` — Codex reads it before doing any work. Re-tested with Codex CLI v0.143.0 at v1.3.0: both routes load all 11 skills into the model-visible prompt (verify with `codex debug prompt-input`). Codex does not honour `disable-model-invocation`, so `progressive-disclosure` is model-reachable there. Full details and receipts: [INSTALL-CODEX.md](INSTALL-CODEX.md). (Paths per the [Codex skills docs](https://developers.openai.com/codex/skills).)
+Codex detects skill changes automatically. For the passive-guidance version, copy [`guidance/finding-unknowns.md`](guidance/finding-unknowns.md) into your project root as `AGENTS.md` — Codex reads it before doing any work. Re-tested on 2026-09-08 with Codex CLI v0.143.0 against the local v1.4.0 candidate: both routes load all 13 skills into the model-visible prompt (verify with `codex debug prompt-input`). Codex does not honour `disable-model-invocation`, so `progressive-disclosure` is model-reachable there. Full details and receipts: [INSTALL-CODEX.md](INSTALL-CODEX.md). (Paths per the [Codex skills docs](https://developers.openai.com/codex/skills).)
 
 ### Use in Hermes Agent
 
@@ -98,7 +116,7 @@ skills:
     - ~/finding-unknowns-skills/skills
 ```
 
-All 11 skills then register and appear on every Hermes surface. Verified live on Hermes Agent v0.15.1: all 11 load and show `enabled` in `hermes skills list`. Single-skill installs and full receipts: [INSTALL-HERMES.md](INSTALL-HERMES.md).
+Re-tested on 2026-09-08 with Hermes Agent v0.15.1 against the local v1.4.0 candidate: all 13 skills show `enabled` in `hermes skills list`. Other Hermes surfaces were not exercised in this check. Single-skill installs and full receipts: [INSTALL-HERMES.md](INSTALL-HERMES.md).
 
 ### Use in Kimi Code CLI (Kimi K3)
 
@@ -118,6 +136,8 @@ Project-level paths (`.kimi/skills/`, `.claude/skills/`, `.codex/skills/`, `.age
 - You'll know it when you see it (design, UX, tone) → `brainstorm-prototypes`
 - You've brainstormed but ambiguity remains → `interview-me`
 - You can't describe it, but some code somewhere does it right → `reference-hunt`
+- An approach depends on behavior you have not established → `assumption-test`
+- Passing tests may miss an important boundary → `test-blindspots`
 - Ready to build → `implementation-plan`, then keep `implementation-notes` running
 - Built → `pitch-packager` for buy-in, `change-quiz` before you merge
 - Your agent ignores its own instructions, or your CLAUDE.md has grown past reading → `context-audit`
@@ -141,16 +161,22 @@ See [EXAMPLES.md](EXAMPLES.md) for real prompts.
 
 ## Credit
 
-The techniques come from two essays by Thariq Shihipar:
+The original eleven skills draw on two essays by Thariq Shihipar:
 
 - *A Field Guide to Fable: Finding Your Unknowns* — the unknowns framing and the eight task-level skills. [Essay and companion artifacts](https://thariqs.github.io/html-effectiveness/unknowns/). Coverage: [The Decoder](https://the-decoder.com/anthropic-developer-shares-prompting-tips-for-fable-5-that-focus-on-finding-your-own-blind-spots-first/).
 - *[The new rules of context engineering for Claude 5 generation models](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models)* — the three context-level skills: rules give way to judgement, examples to interface design, upfront loading to progressive disclosure.
 
 This repo distills them into the SKILL.md format with original instruction text. Read the essays for the full reasoning, including the Fable 5 launch-video story that motivates the first.
 
+The two maintainer-designed extensions are not attributed to those essays. `assumption-test` applies falsifiable experiments to uncertain technical decisions; [consumer-driven contract testing](https://docs.pact.io/) is one relevant precedent. `test-blindspots` applies [exploratory testing](https://martinfowler.com/bliki/ExploratoryTesting.html) to the gap between passing assertions and intended behavior. The instruction flows are new to this collection; the underlying testing methods are established practice.
+
+## Community
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) to propose a skill or report a problem. Community participation follows our [Code of Conduct](CODE_OF_CONDUCT.md). [CHANGELOG.md](CHANGELOG.md) records releases and the current candidate.
+
 ## License
 
-[MIT](LICENSE) for the skill text in this repo. The underlying techniques belong to their author; attribution above.
+[MIT](LICENSE) for the skill text in this repo. Sources and method attribution are documented above. The Code of Conduct retains its own Contributor Covenant attribution.
 
 ---
 

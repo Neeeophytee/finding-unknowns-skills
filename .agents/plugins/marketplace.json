@@ -1,6 +1,6 @@
 {
   "name": "finding-unknowns",
-  "description": "Skills for finding your unknowns before, during, and after implementation — plus a context audit, agent interface design, and progressive disclosure for the instructions your agent carries into every task. Shares the same skills/ as the Claude Code plugin.",
+  "description": "Skills for finding your unknowns before, during, and after implementation \u2014 plus a context audit, agent interface design, and progressive disclosure for the instructions your agent carries into every task. Shares the same skills/ as the Claude Code plugin.",
   "owner": {
     "name": "Neeeophytee"
   },
@@ -8,7 +8,7 @@
     {
       "name": "finding-unknowns",
       "source": "./",
-      "description": "11 skills for finding your unknowns and rightsizing agent context. Same SKILL.md set as the Claude Code plugin, no conversion."
+      "description": "Skills for finding unknowns before they get expensive, testing assumptions, examining test blindspots, and rightsizing agent context."
     }
   ]
 }

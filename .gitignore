@@ -2,3 +2,8 @@
 
 # Internal planning notes — never published
 FUTURE-EXTENSIONS.md
+implementation-notes.md
+.venv/
+__pycache__/
+*.pyc
+site/dist/
