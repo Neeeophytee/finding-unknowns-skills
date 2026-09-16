@@ -70,7 +70,7 @@ def build(output=None):
     output.mkdir(parents=True, exist_ok=True)
     projects = load_projects()
     template = (ROOT / 'site/index.html').read_text()
-    pages = [('', 'Open tools & public projects', 'Explore the eight maintained projects in the FlowStacks open-source collection, with source links, installation guidance, and individual licenses.', catalog(projects))]
+    pages = [('', 'Open tools & public projects', f'Explore {len(projects)} maintained projects in the FlowStacks open-source collection, with source links, installation guidance, and individual licenses.', catalog(projects))]
     pages += [(p['slug'], p['name'], p['description'], project_page(p, projects)) for p in projects]
     for slug, title, description, body in pages:
         page = template

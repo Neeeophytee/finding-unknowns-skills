@@ -174,5 +174,27 @@
     "stars": 7,
     "stars_checked_at": "2026-09-09",
     "contribute_url": "https://github.com/smukh/a11y-agent-skills/blob/main/CONTRIBUTING.md"
+  },
+  {
+    "slug": "roll-credits",
+    "name": "Roll Credits",
+    "repo": "smukh/roll-credits",
+    "category": "Claude Mod",
+    "license": "MIT",
+    "tagline": "Give your coding session closing credits.",
+    "description": "A native Claude Code Mod that turns session activity into scrolling movie credits, with edited files as the cast and tools in the thank-you list.",
+    "audience": "Claude Code terminal users who want a lighthearted recap of a coding session.",
+    "features": [
+      "Open a native credits pane with /credits.",
+      "Switch to a still view, replay the roll, or print credits as text.",
+      "Keep activity counters in memory without extra model calls or telemetry."
+    ],
+    "command": "claude plugin marketplace add smukh/roll-credits\nclaude plugin install roll-credits@roll-credits-marketplace\nCLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 claude",
+    "example": "/credits demo",
+    "outcome": "A fictional sample roll to try immediately. Run /credits after working to see the session activity the Mod observed.",
+    "limits": "Requires early-access function hooks; tested with Claude Code 2.1.272 in the terminal. File credits count successful Edit, Write, and NotebookEdit calls. Bash and external-editor changes are excluded. Statistics reset when the Mod reloads.",
+    "stars": 2,
+    "stars_checked_at": "2026-09-16",
+    "contribute_url": "https://github.com/smukh/roll-credits/blob/main/CONTRIBUTING.md"
   }
 ]
