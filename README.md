@@ -4,6 +4,7 @@
 [![skills.sh installs](https://skills.sh/b/neeeophytee/finding-unknowns-skills)](https://skills.sh/neeeophytee/finding-unknowns-skills)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Validate skills](https://github.com/Neeeophytee/finding-unknowns-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/Neeeophytee/finding-unknowns-skills/actions/workflows/validate.yml)
+[![Subscribe — Web After AI](https://img.shields.io/badge/Subscribe-Web%20After%20AI-FF6719?style=flat&logo=substack&logoColor=white)](https://webafterai.substack.com/)
 
 **14 installable skills that help your coding agent find what you don't know — before it gets expensive to fix.**
 
@@ -183,7 +184,18 @@ The two maintainer-designed extensions are not attributed to those essays. `assu
 
 ## Citation
 
-To cite this repository, use the [BibLaTeX `@online` entry](references.bib).
+To cite this repository, copy the BibLaTeX entry below or download [references.bib](references.bib).
+
+```bibtex
+@online{neeeophytee2026findingunknowns,
+  author = {Mitra, Shilpa},
+  title = {Finding-Unknowns Skills},
+  date = {2026-09-27},
+  version = {1.5.0},
+  url = {https://github.com/Neeeophytee/finding-unknowns-skills},
+  langid = {english}
+}
+```
 
 ## Community
 
