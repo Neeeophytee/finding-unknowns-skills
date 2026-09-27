@@ -39,3 +39,9 @@ Judge decisions and observable outcomes, not exact wording or section names. Che
 ## Current evidence
 
 The fixtures and deterministic probes are reproducible. No independent model comparison or cross-agent behavioral improvement is claimed for the new skills. The new skills shipped in [v1.4.0](https://github.com/Neeeophytee/finding-unknowns-skills/releases/tag/v1.4.0). Comparative behavioral trials remain a future evidence milestone; publication does not establish behavioral improvement.
+
+## Regression-proof candidate — 1.5.0
+
+Run `python3 evals/regression_proof.py`. The same checks reject the original duplicate-order behavior, reject an incomplete fix that drops every subsequent event, and accept the bounded sequential correction. This deterministic example verifies the fixture and assertions, not agent behavior or concurrent idempotency. Existing fixtures remain unchanged.
+
+For behavioral trials, provide only `fixtures/webhooks.py`, the new skill, and the requirement that replaying an event ID creates one order while distinct IDs create distinct orders. Do not provide `regression_proof.py`, which contains the answer. Assess whether the agent records the original failure, preserves the test across the fix, catches the incomplete fix, and stays within scope. Also test review-only requests, an unreproducible report, an unavailable dependency, a fix already present, and a feature request that should not trigger this skill. No comparative agent evaluation has been run for this candidate.

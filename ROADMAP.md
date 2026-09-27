@@ -2,6 +2,11 @@
 
 Ordered by usefulness, not a promised delivery date.
 
+## 1.5.0 — 2026-09-27
+
+- Add `regression-proof` without changing the thirteen existing skills.
+- Add local discovery receipts and a regression-test teaching example.
+
 ## Shipped — 1.4.0 (2026-09-09)
 
 - Preserved the eleven existing skills and added `assumption-test` and `test-blindspots`.

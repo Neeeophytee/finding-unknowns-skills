@@ -68,6 +68,12 @@ Invocation prompts for each skill. Adapt freely — the skill does the structuri
 
 > The permissions tests pass. Tenant isolation is required even for administrators. Find important behavior these tests do not establish, using the local fixture.
 
+## regression-proof
+
+> Fix the reported duplicate-order bug in the local webhook handler. Use regression-proof: show the same test failing before the fix and passing afterward, and check that distinct event IDs still create distinct orders.
+
+> Review this proposed bug fix without changing production code. Check whether its regression test catches the original failure; report missing evidence honestly.
+
 ## Worked examples with reproducible observations
 
 These are deterministic teaching examples, not agent benchmark results or production incidents. The fixtures deliberately contain flaws. Run `python3 -m unittest discover -s evals/fixtures -p 'test_baseline.py' -v`, then `python3 evals/reproduce.py` from the repository root. See [the evaluation protocol](evals/README.md).

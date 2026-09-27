@@ -21,6 +21,13 @@ class RepositoryChecks(unittest.TestCase):
             with self.subTest(skill=relative):
                 self.assertEqual(hashlib.sha256((ROOT / relative).read_bytes()).hexdigest(), digest)
 
+    def test_pre_150_skills_unchanged(self):
+        snapshot = json.loads((ROOT / "tests/fixtures/pre-1.5.0-skills.json").read_text())
+        self.assertEqual(len(snapshot), 13)
+        for relative, digest in snapshot.items():
+            with self.subTest(skill=relative):
+                self.assertEqual(hashlib.sha256((ROOT / relative).read_bytes()).hexdigest(), digest)
+
     def check_mutation(self, mutate, expected):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -84,7 +91,7 @@ class RepositoryChecks(unittest.TestCase):
     def test_stale_readme_count_is_rejected(self):
         def mutate(root):
             path = root / "README.md"
-            path.write_text(path.read_text().replace("**13 installable", "**11 installable"))
+            path.write_text(path.read_text().replace(f"**{len(list((root / 'skills').glob('*/SKILL.md')))} installable", "**0 installable"))
         self.check_mutation(mutate, "headline skill count")
 
 

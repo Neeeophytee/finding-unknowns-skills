@@ -5,13 +5,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Validate skills](https://github.com/Neeeophytee/finding-unknowns-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/Neeeophytee/finding-unknowns-skills/actions/workflows/validate.yml)
 
-**13 installable skills that help your coding agent find what you don't know — before it gets expensive to fix.**
+**14 installable skills that help your coding agent find what you don't know — before it gets expensive to fix.**
 
 The map is not the territory. Your prompt is a map; the codebase and the real world are the territory. The gap between them is your *unknowns*, and with strong models the quality of the work is bottlenecked by how well you clarify them. The original eight task-level skills turn that idea, from [Thariq Shihipar's](https://thariqs.github.io/html-effectiveness/unknowns/) essay *A Field Guide to Fable: Finding Your Unknowns*, into commands you can run in Claude Code, OpenAI Codex, Kimi Code CLI (Kimi K3), or any agent that reads the [agentskills.io](https://agentskills.io) SKILL.md format.
 
 Another three come from his follow-up, [*The new rules of context engineering for Claude 5 generation models*](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models), which works one layer up: not the unknowns in a single prompt, but the ones baked into the context every prompt inherits.
 
-> Community project. Eleven skills distilled, with attribution, from public essays by Thariq Shihipar (Anthropic, Claude Code team), plus two maintainer-designed extensions. **Not an official Anthropic repository.**
+> Community project. Twelve skills distilled, with attribution, from public essays by Thariq Shihipar (Anthropic, Claude Code team), plus two maintainer-designed extensions. **Not an official Anthropic repository.**
 
 The contribution here is the reusable instruction design: focused triggers, concrete deliverables, scope boundaries, portable packaging, and documented checks. The new extensions take the workflow from identifying unknowns to testing them. [Examples](EXAMPLES.md) · [Compatibility](COMPATIBILITY.md) · [Contributing](CONTRIBUTING.md) · [Roadmap](ROADMAP.md)
 
@@ -60,6 +60,16 @@ These are maintainer-designed additions, informed by established testing practic
 
 The additions have packaging and discovery checks. [Evaluation protocol and fixtures](evals/README.md).
 
+### One for proving a bug fix
+
+| Skill | Phase | One line |
+|---|---|---|
+| [`regression-proof`](skills/regression-proof/SKILL.md) | During / after | Show that the same regression test fails before a fix and passes after it |
+
+Source: [Spending your effort](https://claude.dev/blog/spending-your-effort/).
+
+Use `regression-proof` for a reported bug; use `test-blindspots` to investigate what a passing suite misses. For feature work: clarify with `interview-me`, implement and iterate, then verify relevant behavior. Skills guide the workflow; they do not change your agent's effort setting.
+
 ## Install
 
 **One command, any agent (recommended):** Vercel's `skills` CLI auto-detects your coding agent (Claude Code, Cursor, Codex, Copilot, Gemini, and more) and installs the skills into the right place for each:
@@ -68,9 +78,9 @@ The additions have packaging and discovery checks. [Evaluation protocol and fixt
 npx skills add Neeeophytee/finding-unknowns-skills
 ```
 
-Add `--list` to preview the 13 skills first, or `--skill blindspot-pass` to install just one. (Discoverable on [skills.sh](https://skills.sh).)
+Add `--list` to preview the 14 skills first, or `--skill blindspot-pass` to install just one. (Discoverable on [skills.sh](https://skills.sh).)
 
-**As a Claude Code plugin (all 13 skills):**
+**As a Claude Code plugin (all 14 skills):**
 
 ```
 /plugin marketplace add Neeeophytee/finding-unknowns-skills
@@ -137,6 +147,7 @@ Project-level paths (`.kimi/skills/`, `.claude/skills/`, `.codex/skills/`, `.age
 - You've brainstormed but ambiguity remains → `interview-me`
 - You can't describe it, but some code somewhere does it right → `reference-hunt`
 - An approach depends on behavior you have not established → `assumption-test`
+- Fixing a reported bug, or verifying a proposed fix → `regression-proof`
 - Passing tests may miss an important boundary → `test-blindspots`
 - Ready to build → `implementation-plan`, then keep `implementation-notes` running
 - Built → `pitch-packager` for buy-in, `change-quiz` before you merge
@@ -169,6 +180,10 @@ The original eleven skills draw on two essays by Thariq Shihipar:
 This repo distills them into the SKILL.md format with original instruction text. Read the essays for the full reasoning, including the Fable 5 launch-video story that motivates the first.
 
 The two maintainer-designed extensions are not attributed to those essays. `assumption-test` applies falsifiable experiments to uncertain technical decisions; [consumer-driven contract testing](https://docs.pact.io/) is one relevant precedent. `test-blindspots` applies [exploratory testing](https://martinfowler.com/bliki/ExploratoryTesting.html) to the gap between passing assertions and intended behavior. The instruction flows are new to this collection; the underlying testing methods are established practice.
+
+## Citation
+
+To cite this repository, use the [BibLaTeX `@online` entry](references.bib).
 
 ## Community
 

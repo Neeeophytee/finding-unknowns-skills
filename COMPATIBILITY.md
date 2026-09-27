@@ -1,8 +1,15 @@
 # Compatibility and verification
 
-Release status: [v1.4.0 was published on September 9, 2026](https://github.com/Neeeophytee/finding-unknowns-skills/releases/tag/v1.4.0). References below to a September 8 candidate describe the environment tested at that time, not the current release status.
+Version 1.5.0 adds `regression-proof`. The September 8 receipts below cover 1.4.0; the September 27 receipts cover 1.5.0.
 
 The collection uses flat, single-file Agent Skills. Installation discovery, invocation, and behavioral quality are separate claims. This matrix describes observed checks, not a promise that every agent interprets every instruction identically.
+
+## Local candidate checks — 1.5.0, 2026-09-27
+
+- The cached `skills@1.7.0` CLI entrypoint, invoked directly with Node (`add /absolute/path/to/repo --list`), discovers all 14 names and descriptions on Node 24.19.0. No skills were installed by this preview.
+- Codex CLI 0.143.0: isolated directory and plugin routes expose all 14 names and descriptions in `debug prompt-input`. Each route used a separate temporary configuration and Git repository.
+- Both manifests are 1.5.0; the Claude manifest lists all 14 directories. All 13 pre-existing skill files are byte-identical to the starting checkout.
+- This is local discovery evidence, not live skills.sh indexing, invocation, or behavioral improvement. Hermes, Claude Code, Cursor, and Kimi were not re-tested for this candidate; their prior receipts below cover 1.4.0 only.
 
 ## Pre-release checks — 2026-09-08
 

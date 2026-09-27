@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.0 — 2026-09-27
+
+- Add `regression-proof` for evidence-backed bug fixes; preserve all thirteen existing skill files unchanged.
+- Register fourteen skills in the Claude plugin and bump both plugin manifests to 1.5.0.
+- Add invocation examples, a concise source link, and a BibLaTeX repository citation.
+- Prepare discovery checks and the GitHub Release publication checklist.
+
 ## 1.4.0 — 2026-09-09
 
 - Add `assumption-test` and `test-blindspots` as maintainer-designed extensions.

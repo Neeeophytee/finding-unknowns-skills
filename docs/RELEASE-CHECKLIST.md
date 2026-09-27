@@ -1,28 +1,25 @@
-# Release checklist — 1.4.0
+# Release checklist — 1.5.0
 
-Status: [v1.4.0 was published on September 9, 2026](https://github.com/Neeeophytee/finding-unknowns-skills/releases/tag/v1.4.0). This retained checklist documents the release procedure; it is not a pending release or authorization to republish.
+## Verify
 
-## Verify the candidate
+- Run `python scripts/validate.py --release` and `python -m unittest discover -s tests -v`.
+- Validate the new skill's frontmatter and single-file structure.
+- Confirm all thirteen prior skills match `tests/fixtures/pre-1.5.0-skills.json`.
+- Confirm both plugin manifests say 1.5.0 and the Claude manifest lists all fourteen skills exactly once.
+- Run `python evals/regression_proof.py` and `python scripts/build_site.py`.
+- Review the dated discovery receipts in [COMPATIBILITY.md](../COMPATIBILITY.md); discovery checks do not establish behavioral improvement.
 
-- Run `python scripts/validate.py` and `python -m unittest discover -s tests -v` in the development environment.
-- Run the bundled skill-creator validator for each new skill when available.
-- Review the new skill triggers and the evaluation cases. Packaging checks do not replace behavioral trials.
-- Confirm the original eleven skill hashes match `tests/fixtures/legacy-skills.json`.
-- Confirm both plugin manifests say 1.4.0 and the Claude ship gate includes every skill exactly once.
-- Review the dated compatibility receipts and any untested routes.
-- Confirm the approved private reporting address `coc@flowstacks.xyz` is monitored.
-- Run `python scripts/validate.py --release` to catch an unresolved conduct contact.
-- Build the local documentation page with `python scripts/build_site.py`.
+## Publish
 
-## After explicit publication authorization
+- Review the complete release diff and confirm the repository, authenticated account, and commit identity.
+- Commit only release files; exclude local notes, credentials, generated output, and unrelated work.
+- Finalize the changelog date, create an annotated `v1.5.0` tag, and push the commit and tag.
+- Create a published GitHub Release with the changelog highlights. A tag alone is not a release.
+- Check CI and public installation discovery after publication.
 
-- Wait for the maintainer to review the complete diff and switch to their own GitHub account.
-- Verify the authenticated GitHub account, destination repository, and Git commit identity before any commit or push. Do not log out or change accounts on the maintainer’s behalf.
-- Review the full diff, finalize the changelog date, and commit only the approved files.
-- Create an annotated `v1.4.0` tag only if that tag does not already exist.
-- Push the approved commit and tag, then create a published GitHub Release with release notes from the finalized changelog. A tag alone is not completion.
-- Set up the dedicated Vercel OSS project using [the hosting notes](HOSTING.md), then verify the deployed page.
-- Recheck links to new files after GitHub publication.
-- Capture application-day metrics and finalize [the application draft](OSS-APPLICATION.md).
+## skills.sh
 
-Do not add AI-attribution trailers. Do not claim an unreleased local candidate is available through the public GitHub install command.
+- Before publication, `npx skills@latest add /absolute/path/to/repo --list` must discover all fourteen skills.
+- After publication, run `npx skills@latest add Neeeophytee/finding-unknowns-skills --list` and verify `regression-proof` is present.
+- Verify a genuine install with `--skill regression-proof` in an isolated project and check the [listing](https://skills.sh/neeeophytee/finding-unknowns-skills/regression-proof).
+- The [skills.sh FAQ](https://skills.sh/docs/faq) describes listing through installation telemetry. Do not equate local discovery with public indexing, or repeat installs to inflate counts. Record the observed result; indexing may be delayed.
