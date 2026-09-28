@@ -196,5 +196,27 @@
     "stars": 2,
     "stars_checked_at": "2026-09-16",
     "contribute_url": "https://github.com/smukh/roll-credits/blob/main/CONTRIBUTING.md"
+  },
+  {
+    "slug": "skill-adapter",
+    "name": "Skill Adapter",
+    "repo": "smukh/skill-adapter",
+    "category": "Agent skills",
+    "license": "MIT",
+    "tagline": "Keep the skills you like when you change models.",
+    "description": "Adapt an existing agent skill for a target model while preserving its purpose, workflow, and supporting files.",
+    "audience": "People reusing skills across Codex, Claude Code, Cursor, Kimi Code, and Hermes who want a reviewable copy tailored to an explicit target model.",
+    "features": [
+      "One installable skill with profiles for GPT-6 Astra, Claude 5, and Kimi K3, plus a conservative generic fallback.",
+      "Creates a separate adapted package and an ADAPTATION.md change report; your source stays intact.",
+      "Preserves requirements, approval gates, tools, and resources. Asks for the target when reliable model identity is unavailable."
+    ],
+    "command": "npx skills add smukh/skill-adapter --skill skill-adapter",
+    "example": "Use skill-adapter to adapt ./my-skill for GPT-6 Astra. Preserve its workflow and supporting files, and write a separate adapted copy with a change report.",
+    "outcome": "An adapted skill package you can inspect alongside the original and install in your agent.",
+    "limits": "Invoke the adapter explicitly. The GPT-6 Astra smoke evaluation checked workflow preservation; it does not establish performance gains across models. Source updates require re-adaptation; automatic upstream merging is not implemented.",
+    "stars": 4,
+    "stars_checked_at": "2026-09-28",
+    "contribute_url": "https://github.com/smukh/skill-adapter/blob/main/CONTRIBUTING.md"
   }
 ]
